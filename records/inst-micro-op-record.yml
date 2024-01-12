@@ -1,0 +1,24 @@
+name: InstMicroOpRecord
+enum:
+  name: STF_INST_MICROOP
+  val: 230
+mandatory: Whenever STF_CONTAIN_MICROOP bit is set in STF_TRACE_INFO record
+fields:
+  - start: 0
+    end: 7
+    desc: Size of micro-op
+  - start: 8
+    end: 39
+    desc: Micro-op
+desc: |-
+  Used by trace morphing tools to inject new instruction encoding records, a technique used to run micro-architecture "what-if" studies when original instruction is replaced by more than one instruction
+  
+  Use-cases:
+  
+  . Instruction replacement 1:1 in which case trace's replaced instruction would be indicated by STF_INST_32 record. In this case there is no microop record emitted in the trace
+  
+  . Instruction replacement 1:n where n = (#of microops emitted + 1).
+  
+  In both cases following hold true:
+
+  * The original Instruction record STF_INST_MICROOP replacement and/or microop related changes to memory accesses, operand reg records etc. are emitted(or removed) in the trace before the original STF_INST_32/16 record that defines instruction boundary for all artifacts related to the instruction(IRG)

@@ -1,0 +1,6 @@
+name: Reserved
+enum:
+  name: STF_RESERVED
+  val: 0
+desc: |-
+  Reserved for error detection

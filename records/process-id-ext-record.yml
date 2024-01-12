@@ -1,0 +1,23 @@
+name: ProcessIDExtRecord
+enum:
+  name: STF_PROCESS_ID_EXT
+  val: 8
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 31
+    desc: TGID/PID
+  - start: 32
+    end: 63
+    desc: TID
+  - start: 64
+    end: 95
+    desc: ASID
+desc: |-
+  Shall precede any instruction record that represents a change from prior
+  instruction record in any of the listed ID’s
+  
+  Every tool that creates/modifies stf file shall append/update the
+  ProcessIDExtRecord
+  
+  Indicates any change in thread, process, or address space ID

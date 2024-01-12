@@ -1,0 +1,25 @@
+// tag::record-fields[]
+ifndef::record-mandatory[]
+:record-mandatory: NO
+endif::[]
+==== {record-name}
+[width="100%",cols="13%a,87%a",options="unbreakable"]
+|===
+|*Enum*
+|{record-enum}
+|*Required*
+|{record-mandatory}
+|*Fields*
+|[unstyled]
+// end::record-fields[]
+// tag::record-desc[]
+|*Description*
+|--
+// end::record-desc[]
+// tag::record-end[]
+--
+|===
+:!record-name:
+:!record-enum:
+:!record-mandatory:
+// end::record-end[]

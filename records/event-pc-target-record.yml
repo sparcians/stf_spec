@@ -1,0 +1,13 @@
+name: EventPCTargetRecord
+enum:
+  name: STF_EVENT_PC_TARGET
+  val: 101
+mandatory: Whenever needed with an STF_EVENT
+fields:
+  - start: 0
+    end: 63
+    desc: Virtual address of target PC when an event exception is taken, causing a change-of-flow (COF).
+desc: |-
+  May follow STF_EVENT
+
+  Provides information on which PC should follow this event.

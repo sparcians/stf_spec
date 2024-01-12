@@ -1,0 +1,12 @@
+name: InstReadyRegRecord
+enum:
+  name: STF_INST_READY_REG
+  val: 41
+fields:
+  - start: 0
+    end: 15
+    desc: Register number of ready register
+desc: |-
+  This is used when we artificially modify dependencies between instructions.
+  
+  Mark destination register as ready

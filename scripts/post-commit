@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -e .dirty ]; then
+    rm .dirty
+    git add generated
+    git commit --amend -C HEAD --no-verify
+fi

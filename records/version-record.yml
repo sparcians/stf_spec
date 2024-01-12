@@ -1,0 +1,19 @@
+name: VersionRecord
+enum:
+  name: STF_VERSION
+  val: 2
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 31
+    desc: Major version number of the STF specification
+  - start: 32
+    end: 63
+    desc: Minor version number of the STF specification
+desc: |-
+  Shall exist in all STF files as the second record.
+
+  Every tool that creates/modifies an stf file shall append/update the
+  VersionRecord indicating compliance to a particular STF specification version.
+
+  Version numbers are maintained in API header stf.h

@@ -1,0 +1,16 @@
+name: TraceInfoFeatureRecord
+enum:
+  name: STF_TRACE_INFO_FEATURE
+  val: 7
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 63
+    desc: Features Supported
+desc: |-
+  Every tool that creates/modifies stf file shall append a TraceInfoFeatureRecord.
+  
+  Provides information for all features supported or not supported in this trace.
+  
+  When traces are manipulated by tools there should be consistency checking of
+  supported features (e.g. trace stitching).

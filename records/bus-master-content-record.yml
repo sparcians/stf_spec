@@ -1,0 +1,23 @@
+name: BusMasterContentRecord
+enum:
+  name: STF_BUS_MASTER_CONTENT
+  val: 63
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 63
+    desc: Data/content of memory being accessed
+desc: |-
+  This happens only for bus master read/write
+  
+  Shall follow STF_BUS_MASTER_ACCESS
+  
+  *FAQs*
+  
+  _How is information of memory access data size for STF_BUS_MASTER_ACCESS record conveyed so that we know how much valid data data is there in STF_BUS_MASTER_CONTENT?_
+  
+  Using STF_BUS_MASTER_ACCESS record's "mem access data size" field
+  
+  _How are memory access content conveyed for access data size > 8 bytes?_
+  
+  Using multiple STF_BUS_MASTER_CONTENT records.
