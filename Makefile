@@ -13,6 +13,6 @@ git-hooks: .git/hooks/pre-commit .git/hooks/post-commit
 generated/stf-records.adoc: records/*.yml scripts/gen-records.py .git/hooks/pre-commit .git/hooks/post-commit
 	./scripts/gen-records.py
 
-generated/stf-spec-github.adoc: generated/stf-records.adoc LICENSE stf-spec.adoc
+generated/stf-spec-github.adoc: generated/stf-records.adoc LICENSE stf-spec.adoc scripts/flatten.sh
 	./scripts/flatten.sh
 	touch .dirty
