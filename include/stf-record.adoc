@@ -2,8 +2,10 @@
 ifndef::record-mandatory[]
 :record-mandatory: NO
 endif::[]
+[%breakable]
 ==== {record-name}
-[width="100%",cols="13%a,87%a",options="unbreakable"]
+[%unbreakable]
+[width="100%",cols="14%a,86%a",options="unbreakable"]
 |===
 |*Enum*
 |{record-enum}

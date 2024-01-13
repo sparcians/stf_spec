@@ -5,8 +5,12 @@
 
 toc::[]
 
+<<<
+
 == License
 include::LICENSE[]
+
+<<<
 
 == Changelog
 
@@ -85,6 +89,8 @@ first step in vector instructions support.
 |Initial Spec
 |===
 
+<<<
+
 == Introduction
 
 Simple Trace Format (STF) is a binary file format for storing instruction
@@ -159,6 +165,8 @@ interpretation. This area often has to do with the state or pre-condition of the
 data entities being injected
 ** The inter-relationships among various entities of data
 
+<<<
+
 == STF File Anatomy
 
 STF *record* is an atomic container which holds a fixed width *descriptor* and a
@@ -227,6 +235,8 @@ record specification.
 === Specification of Records
 
 include::generated/stf-records.adoc[]
+
+<<<
 
 == STF Exception Event and Event Meta-Data
 
@@ -306,6 +316,8 @@ Field 0 Encoding:
 
 |Sync/Async |Meta-event for capturing transition into a new execution mode
 |===
+
+<<<
 
 == Terminology / Definitions
 

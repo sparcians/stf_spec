@@ -1,3 +1,4 @@
 .dirty
 .bundle
 Gemfile.lock
+generated/stf-spec.pdf
