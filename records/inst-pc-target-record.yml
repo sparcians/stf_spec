@@ -1,0 +1,15 @@
+name: InstPCTargetRecord
+enum:
+  name: STF_INST_PC_TARGET
+  val: 31
+mandatory: Whenever COF condition exists due to a branch
+fields:
+  - start: 0
+    end: 63
+    desc: Virtual address of target PC when current instruction's branch is taken, causing a change-of-flow (COF).
+desc: |-
+  Shall be emitted only for branch based COF (not an exception based COF).
+  
+  Omit this record if the branch is not taken.
+  
+  stf_dump shows this records with a prefix of "PC "

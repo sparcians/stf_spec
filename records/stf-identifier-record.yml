@@ -1,0 +1,18 @@
+name: STFIdentifierRecord
+enum:
+  name: STF_IDENTIFIER
+  val: 1
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 23
+    desc: |-
+      "STF" expressed as the magic number
+desc: |-
+  Shall exist as the first record of the file.
+  
+  Every tool that creates/modifies stf file shall ensure STFIdentifierRecord
+  exists and is the first record of the file.
+  
+  Display magic number spelling out “STF” at the beginning of the file, to
+  enable identification of STF files without STF tools.

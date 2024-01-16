@@ -1,0 +1,17 @@
+name: InstMemContentRecord
+enum:
+  name: STF_INST_MEM_CONTENT
+  val: 61
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 63
+    desc: Data/content of a memory being accessed by current instruction
+desc: |-
+  This happens only for memory read/write instructions
+  
+  Shall follow STF_INST_MEM_ACCESS
+  
+  For memory accesses with data size less than 8 bytes, data shall be right justified, while exact address and size are expressed in the STF_INST_MEM_ACCESS record.
+  
+  For memory accesses with data size greater than 8 bytes, use multiple STF_INST_MEM_CONTENT records, where the first STF_INST_MEM_CONTENT record refers to the address specified in the STF_INST_MEM_ACCESS record, and subsequent STF_INST_MEM_CONTENT records refer to subsequent target addresses appropriately incremented to preserve continuity of data.

@@ -1,0 +1,10 @@
+name: EndHeaderRecord
+enum:
+  name: STF_END_HEADER
+  val: 19
+mandatory: 'YES'
+desc: |-
+  Every tool that creates an stf file shall append the EndHeaderRecord
+  
+  Shall be issued as the last header record in an STF file. Its only purpose is to
+  complete the Header Record Group.

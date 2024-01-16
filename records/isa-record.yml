@@ -1,0 +1,20 @@
+name: ISARecord
+enum:
+  name: STF_ISA
+  val: 4
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 15
+    desc: |-
+      ISA
+      ** 0 = Reserved
+      ** 1 = RISC-V
+      ** 2 = ARM
+      ** 3 = x86
+      ** 4 = Power
+desc: |-
+  Every tool that creates/modifies stf file shall append/update the ISARecord
+
+  Shall precede InstIEMRecord, to accomodate provisioning for different
+  Instruction Encoding Modes (IEM) for different ISAs.

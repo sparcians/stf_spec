@@ -1,0 +1,30 @@
+name: TraceInfoRecord
+enum:
+  name: STF_TRACE_INFO
+  val: 6
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 7
+    desc: |-
+      Trace generator/modifier name:
+      ** e.g. spike, imperas, sail
+  - start: 8
+    end: 15
+    desc: major version
+  - start: 16
+    end: 23
+    desc: minor version
+  - start: 24
+    end: 31
+    desc: minor minor version
+  - start: 32
+    end: 47
+    desc: Size of comment string = n bytes
+  - start: 48
+    end: (8*n+48)
+    desc: Comment string data
+desc: |-
+  Information about a trace generator or trace modifier.
+  
+  Every tool that creates/modifies stf file shall append a TraceInfoRecord.

@@ -1,0 +1,45 @@
+name: BusMasterAccessRecord
+enum:
+  name: STF_BUS_MASTER_ACCESS
+  val: 62
+mandatory: Whenever there are masters other than a single core in the traced environment.
+fields:
+  - start: 0
+    end: 63
+    desc: Virtual address of the target memory being accessed
+  - start: 64
+    end: 79
+    desc: memory access data size
+  - start: 80
+    end: 87
+    desc: |-
+      memory access initiator type
+      ** 0 = Core
+      ** 1 = GPU
+      ** 2 = DMA
+      ** 3 = PCIe
+      ** 4 = SRIO
+      ** 5 = ICN
+      ** 6 = ACCEL
+  - start: 88
+    end: 95
+    desc: memory access initiator index
+  - start: 96
+    end: 127
+    desc: memory access attributes
+  - start: 128
+    end: 135
+    desc: |-
+      access type
+      ** 0 = Reserved
+      ** 1 = Read
+      ** 2 = Write
+desc: |-
+  Shall be used to capture memory accesses by masters other than the primary core being traced.
+  
+  Memory access initiator index distinguishes between multiple instances of one type of master (another core, second accelerator port, etc.)
+  
+  Use Cases:
+
+  * Another core’s snoop
+  * I/O device read/write

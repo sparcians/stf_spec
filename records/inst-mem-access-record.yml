@@ -1,0 +1,32 @@
+name: InstMemAccessRecord
+enum:
+  name: STF_INST_MEM_ACCESS
+  val: 60
+mandatory: 'YES'
+fields:
+  - start: 0
+    end: 63
+    desc: Virtual address of the target memory being accessed by current instruction (read or write).
+  - start: 64
+    end: 79
+    desc: memory access data size
+  - start: 80
+    end: 95
+    desc: memory access attributes.
+  - start: 96
+    end: 103
+    desc: |-
+      access type
+      ** 0 = Reserved
+      ** 1 = Read
+      ** 2 = Write
+
+      ToDo: List all access type encodings here (e.g. non-cacheable, write back write allocate, etc.) as well as encodings for prefetches, preloads, etc. +
+desc: |-
+  Shall exist for every instruction doing memory read/write.
+  
+  Different memory addresses coming from the same instruction shall be returned in order.
+  
+  The record shall not be used to indicate memory accesses related to instruction address (i.e. fetch). Because we already have explicit information on instruction address (see FAQ item-3) and its instruction encoding content
+  
+  When VA→PA translation is available, this record shall follow a record with PA (not supported by the spec at this time)

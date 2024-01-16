@@ -1,0 +1,13 @@
+name: Inst16Record
+enum:
+  name: STF_INST_16
+  val: 241
+mandatory: Whenever instruction is a 16-bit instruction
+fields:
+  - start: 0
+    end: 15
+    desc: 16-bit instruction encoding
+desc: |-
+  Shall conform to the last STF_INST_IEM record before this record
+  
+  All preceding instruction attributes are pulled together with this record to create an instruction record group (IRG (i.e. STFInst)).

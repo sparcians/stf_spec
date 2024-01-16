@@ -1,0 +1,13 @@
+name: Inst32Record
+enum:
+  name: STF_INST_32
+  val: 240
+mandatory: Whenever instruction is a 32-bit instruction
+fields:
+  - start: 0
+    end: 31
+    desc: 32-bit instruction encoding
+desc: |-
+  Shall conform to the last STF_INST_IEM record before this record
+  
+  All preceding instruction attributes are pulled together with this record to create an instruction record group (IRG (i.e. STFInst)).
