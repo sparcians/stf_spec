@@ -39,11 +39,12 @@ fields:
 
 desc: |-
   Description and content of a register relevant to an instruction.
-  
+
   Multiple records are used to convey the state of all/required set of registers for trace consumers.
-  
+
   The size of the register value depends on the register type. If vector is specified by this record, the size turns to be *vlen*; otherwise, the size keeps 64-bit for scalar
-  
+
   Use-case:
+
   * Functional model uses this record to dump register state if periodic register dump is set (which is the case for default Functional model run) or specific condition for register dump is met (i.e. at the very beginning of a trace)
   * Periodic register dumps are used as reference points in stf2elf flow to speed up mid-trace machine register state determination.
