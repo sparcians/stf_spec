@@ -6,10 +6,11 @@ To make changes to this file, edit records/inst-iem-record.yml and then run make
 :record-enum: STF_INST_IEM (5)
 :record-mandatory: YES
 include::../../include/stf-record.adoc[tag=record-fields]
-* b[15:0] Instruction encoding mode 
-** 0 = Reserved
-** 1 = STF_INST_IEM_RV32
-** 2 = STF_INST_IEM_RV64
+* b[15:0] Instruction encoding mode
+** 0x0 = Reserved
+** 0x1 = STF_INST_IEM_RV32
+** 0x2 = STF_INST_IEM_RV64
+** 0xFFFF = Reserved
 include::../../include/stf-record.adoc[tag=record-desc]
 Every tool that creates/modifies stf file shall append/update the InstIEMRecord.
 

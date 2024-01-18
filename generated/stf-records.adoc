@@ -18,6 +18,12 @@ include::records/process-id-ext-record.adoc[]
 
 include::records/force-pc-record.adoc[]
 
+include::records/vlen-config-record.adoc[]
+
+include::records/protocol-id-record.adoc[]
+
+include::records/clock-id-record.adoc[]
+
 include::records/end-header-record.adoc[]
 
 include::records/inst-pc-target-record.adoc[]
@@ -45,6 +51,10 @@ include::records/inst-micro-op-record.adoc[]
 include::records/inst32-record.adoc[]
 
 include::records/inst16-record.adoc[]
+
+include::records/transaction-record.adoc[]
+
+include::records/transaction-dependency-record.adoc[]
 
 include::records/reserved-end-record.adoc[]
 

@@ -1,0 +1,26 @@
+name: TransactionDependencyRecord
+enum:
+  name: STF_TRANSACTION_DEPENDENCY
+  val: 251
+mandatory: Not allowed in instruction traces, optional in transaction traces
+fields:
+  - start: 0
+    end: 63
+    desc: ID of transaction that the current transaction depends on
+  - start: 64
+    end: 127
+    desc: Cycle delta
+  - start: 128
+    end: 135
+    desc: Clock ID
+desc: |-
+  May appear as part of a Transaction Record Group to indicate that the current
+  transaction depends on an earlier transaction.
+
+  The cycle delta field is used to indicate how many cycles of delay should
+  occur between when the dependency is fulfilled and when the current
+  transaction may be issued.
+
+  The clock ID field indicates the clock domain of the cycle delta. This may be
+  different from the clock ID of either the dependency or the current
+  transaction.

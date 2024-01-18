@@ -1,6 +1,6 @@
-name: STFReserveEndRecord
+name: Reserved End
 enum:
-  name: STF_RESERVE_END
+  name: N/A
   val: 255
 desc: |-
-  This shall be the last record of a trace. Reserved for error detection.
+  Reserved for error detection.
