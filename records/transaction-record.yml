@@ -42,3 +42,4 @@ desc: |-
   not be used for large blocks of data.
 
   The protocol data field is variable depending on the protocol ID of the trace.
+  See <<STF Transaction Protocols>> for details on how protocol data is encoded.

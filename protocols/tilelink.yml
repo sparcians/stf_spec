@@ -1,0 +1,148 @@
+name: Tilelink
+enum:
+  name: TILELINK
+  val: 1
+fields:
+  - start: 0
+    end: 7
+    desc: |-
+      Channel ID
+      ** 1 = Channel A
+      ** 2 = Channel B
+      ** 3 = Channel C
+      ** 4 = Channel D
+      ** 5 = Channel E
+  - start: 8
+    end: variable
+    desc: |-
+      Channel data
+channels:
+  - name: ChannelA
+    enum:
+      name: CHANNEL_A
+      val: 1
+    fields:
+      - start: 0
+        end: 7
+        desc: Code
+      - start: 8
+        end: 15
+        desc: Param
+      - start: 16
+        end: 23
+        desc: Size
+      - start: 24
+        end: 87
+        desc: Source
+      - start: 88
+        end: 103
+        desc: Data size (n)
+      - start: 104
+        end: (8*n+103)
+        desc: Data
+      - start: (8*n+104)
+        end: (8*n+167)
+        desc: Address
+      - start: (8*n+168)
+        end: (8*n+183)
+        desc: Mask size (m)
+      - start: (8*n+184)
+        end: (m+8*n+183)
+        desc: Mask. This is stored as a packed bit vector.
+  - name: ChannelB
+    enum:
+      name: CHANNEL_B
+      val: 2
+    fields:
+      - start: 0
+        end: 7
+        desc: Code
+      - start: 8
+        end: 15
+        desc: Param
+      - start: 16
+        end: 23
+        desc: Size
+      - start: 24
+        end: 87
+        desc: Source
+      - start: 88
+        end: 103
+        desc: Data size (n)
+      - start: 104
+        end: (8*n+103)
+        desc: Data
+      - start: (8*n+104)
+        end: (8*n+167)
+        desc: Address
+      - start: (8*n+168)
+        end: (8*n+183)
+        desc: Mask size (m)
+      - start: (8*n+184)
+        end: (m+8*n+183)
+        desc: Mask. This is stored as a packed bit vector.
+  - name: ChannelC
+    enum:
+      name: CHANNEL_C
+      val: 3
+    fields:
+      - start: 0
+        end: 7
+        desc: Code
+      - start: 8
+        end: 15
+        desc: Param
+      - start: 16
+        end: 23
+        desc: Size
+      - start: 24
+        end: 87
+        desc: Source
+      - start: 88
+        end: 103
+        desc: Data size (n)
+      - start: 104
+        end: (8*n+103)
+        desc: Data
+      - start: (8*n+104)
+        end: (8*n+167)
+        desc: Address
+  - name: ChannelD
+    enum:
+      name: CHANNEL_D
+      val: 4
+    fields:
+      - start: 0
+        end: 7
+        desc: Code
+      - start: 8
+        end: 15
+        desc: Param
+      - start: 16
+        end: 23
+        desc: Size
+      - start: 24
+        end: 87
+        desc: Source
+      - start: 88
+        end: 103
+        desc: Data size (n)
+      - start: 104
+        end: (8*n+103)
+        desc: Data
+      - start: (8*n+104)
+        end: (8*n+167)
+        desc: Sink
+  - name: ChannelE
+    enum:
+      name: CHANNEL_E
+      val: 5
+    fields:
+      - start: 0
+        end: 63
+        desc: Sink
+desc: |-
+  A full description of the TileLink protocol is beyond the scope of this
+  document. See
+  https://starfivetech.com/uploads/tilelink_spec_1.8.1.pdf[the TileLink specification]
+  for more details.

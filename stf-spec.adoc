@@ -324,6 +324,12 @@ Field 0 Encoding:
 
 <<<
 
+== STF Transaction Protocols
+
+include::generated/stf-protocols.adoc[]
+
+<<<
+
 == Terminology / Definitions
 
 *Change of Flow (COF)* - Change of instruction execution flow for reasons that
