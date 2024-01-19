@@ -6,6 +6,8 @@ INCLUDES = include/*.adoc
 
 DOC_DEPS = $(INCLUDES) $(GENERATED_ADOCS) LICENSE stf-spec.adoc
 
+SCRIPT_DEPS = scripts/lib/*.py
+
 all: generated/stf-spec-github.adoc $(GENERATED_ADOCS)
  
 .git/hooks/pre-commit: scripts/pre-commit
@@ -16,11 +18,11 @@ all: generated/stf-spec-github.adoc $(GENERATED_ADOCS)
 
 git-hooks: .git/hooks/pre-commit .git/hooks/post-commit
 
-generated/stf-records.adoc: records/*.yml scripts/gen-records.py .git/hooks/pre-commit .git/hooks/post-commit
+generated/stf-records.adoc: records/*.yml scripts/gen-records.py .git/hooks/pre-commit .git/hooks/post-commit $(SCRIPT_DEPS)
 	./scripts/gen-records.py
 	touch .dirty
 
-generated/stf-protocols.adoc: protocols/*.yml scripts/gen-protocols.py .git/hooks/pre-commit .git/hooks/post-commit
+generated/stf-protocols.adoc: protocols/*.yml scripts/gen-protocols.py .git/hooks/pre-commit .git/hooks/post-commit $(SCRIPT_DEPS)
 	./scripts/gen-protocols.py
 	touch .dirty
 
