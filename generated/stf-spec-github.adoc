@@ -561,9 +561,9 @@ To make changes to this file, edit records/process-id-ext-record.yml and then ru
 |{record-mandatory}
 |*Fields*
 |[unstyled]
-* b[31:0] TGID/PID
-* b[63:32] TID
-* b[95:64] ASID
+* b[31:0] Hardware Thread ID (SMT hardware thread ID in an SMT context, otherwise core hardware ID)
+* b[63:32] PID
+* b[95:64] TID
 |*Description*
 |--
 Shall precede any instruction record that represents a change from prior
@@ -572,7 +572,7 @@ instruction record in any of the listed ID’s
 Every tool that creates/modifies stf file shall append/update the
 ProcessIDExtRecord
 
-Indicates any change in thread, process, or address space ID
+Indicates any change in thread, process, or hardware thread ID
 --
 |===
 :!record-name:
