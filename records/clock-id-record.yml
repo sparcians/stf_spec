@@ -1,0 +1,22 @@
+name: ClockIdRecord
+enum:
+  name: STF_CLOCK_ID
+  val: 12
+mandatory: Optional in transaction traces, not allowed in instruction traces
+fields:
+  - start: 0
+    end: 7
+    desc: Clock ID
+  - start: 8
+    end: 23
+    desc: Clock name string length
+  - start: 24
+    end: (8*n+31)
+    desc: Clock name string data
+desc: |-
+  Should appear in the header of a transaction trace.
+
+  Associates a clock name with an ID value in transaction traces. A transaction
+  record includes a clock ID to specify the clock domain of its timestamp.
+
+  Multiple ClockIdRecords can be included in traces with multiple clock domains.

@@ -1,0 +1,17 @@
+name: ProtocolIdRecord
+enum:
+  name: STF_PROTOCOL_ID
+  val: 11
+mandatory: Required in transaction traces, not allowed in instruction traces
+fields:
+  - start: 0
+    end: 7
+    desc: |-
+      Protocol ID
+      ** 0x0 = Reserved
+      ** 0x1 = Tilelink
+      ** 0xFFFF = Reserved
+desc: |-
+  Shall be present in the header of a transaction trace.
+
+  Specifies which protocol is present in a transaction trace.

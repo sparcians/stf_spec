@@ -7,10 +7,11 @@ fields:
   - start: 0
     end: 15
     desc: |-
-      Instruction encoding mode 
-      ** 0 = Reserved
-      ** 1 = STF_INST_IEM_RV32
-      ** 2 = STF_INST_IEM_RV64
+      Instruction encoding mode
+      ** 0x0 = Reserved
+      ** 0x1 = STF_INST_IEM_RV32
+      ** 0x2 = STF_INST_IEM_RV64
+      ** 0xFFFF = Reserved
 desc: |-
   Every tool that creates/modifies stf file shall append/update the InstIEMRecord.
   

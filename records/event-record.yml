@@ -5,18 +5,18 @@ enum:
 mandatory: Whenever COF condition exists due to an event external to the hart/core
 fields:
   - start: 0
-    end: 30
+    end: 62
     desc: STF Exception Event ID number.
-  - start: 31
+  - start: 63
     desc: |-
       Type
       ** 0 = Fault
       ** 1 = Interrupt
-  - start: 32
-    end: 39
+  - start: 64
+    end: 71
     desc: Number of metadata fields
-  - start: 40
-    end: 103
+  - start: 72
+    end: 135
     desc: |-
       Event metadata field 0 +
       ...
@@ -38,3 +38,7 @@ desc: |-
   Event metadata fields shail be 0-extended to 64-bit
   
   stf_dump prints this record prefixed by "EVT "
+
+  *NOTE*: An earlier version of this specification used 32-bit values for the
+  event ID. Traces using 32-bit events can still be read by invoking
+  `reader.set32BitEvents(true)`.

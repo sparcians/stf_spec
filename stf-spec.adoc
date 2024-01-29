@@ -247,22 +247,23 @@ associated meta-data for the events captured by an EventRecord (STF_EVENT).
 |===
 |STF Exception ID |Exception Related Data/Content +
 shall Include |Sync/Async Exception |Description
-|STF_EVENT_USER_SOFTWARE .13+|Field 0: Source of the interrupt |Async |User software interrupt
-|STF_EVENT_SUPERVISOR_SOFTWARE |Async |Supervisor software interrupt
-|STF_EVENT_HYPERVISOR_SOFTWARE |Async |Hypervisor software interrupt
-|STF_EVENT_MACHINE_SOFTWARE |Async |Machine software interrupt
-|STF_EVENT_USER_TIMER |Async |User timer interrupt
-|STF_EVENT_SUPERVISOR_TIMER |Async |Supervisor timer interrupt
-|STF_EVENT_HYPERVISOR_TIMER |Async |Hypervisor timer interrupt
-|STF_EVENT_MACHINE_TIMER |Async |Machine timer interrupt
-|STF_EVENT_USER_EXT |Async |User external interrupt
-|STF_EVENT_SUPERVISOR_EXT |Async |Supervisor external interrupt
-|STF_EVENT_HYPERVISOR_EXT |Async |Hypervisor external interrupt
-|STF_EVENT_MACHINE_EXT |Async |Machine external interrupt
-|STF_EVENT_COPROCESSOR |Async |Supervisor guest external interrupt
-|STF_EVENT_INST_ADDR_MISALIGN |Field 0: Virtual address of the instruction |Sync |Instruction Address Misaligned
-|STF_EVENT_INST_ADDR_FAULT |Field 0: Virtual address of the instruction |Sync |Instruction access fault
-|STF_EVENT_ILLEGAL_INST |
+|INT_USER_SOFTWARE .14+|Field 0: Source of the interrupt |Async |User software interrupt
+|INT_SUPERVISOR_SOFTWARE |Async |Supervisor software interrupt
+|INT_HYPERVISOR_SOFTWARE |Async |Hypervisor software interrupt
+|INT_MACHINE_SOFTWARE |Async |Machine software interrupt
+|INT_USER_TIMER |Async |User timer interrupt
+|INT_SUPERVISOR_TIMER |Async |Supervisor timer interrupt
+|INT_HYPERVISOR_TIMER |Async |Hypervisor timer interrupt
+|INT_MACHINE_TIMER |Async |Machine timer interrupt
+|INT_USER_EXT |Async |User external interrupt
+|INT_SUPERVISOR_EXT |Async |Supervisor external interrupt
+|INT_HYPERVISOR_EXT |Async |Hypervisor external interrupt
+|INT_MACHINE_EXT |Async |Machine external interrupt
+|INT_COPROCESSOR |Async |Supervisor guest external interrupt
+|INT_HOST |Async |Host interrupt
+|INST_ADDR_MISALIGN |Field 0: Virtual address of the instruction |Sync |Instruction Address Misaligned
+|INST_ADDR_FAULT |Field 0: Virtual address of the instruction |Sync |Instruction access fault
+|ILLEGAL_INST .2+|
 Field 0: Virtual address of the instruction
 
 Field 1: Instruction opcode
@@ -270,8 +271,9 @@ Field 1: Instruction opcode
 Field 2: Instruction encoding mode
 
 |Sync |Illegal instruction
-|STF_EVENT_BREAKPOINT |Field 0: Virtual address of the instruction |Sync |Breakpoint
-|STF_EVENT_LOAD_ADDR_MISALIGN .4+|
+|VIRTUAL_INST |Sync | Virtual instruction
+|BREAKPOINT |Field 0: Virtual address of the instruction |Sync |Breakpoint
+|LOAD_ADDR_MISALIGN .4+|
 Field 0: Virtual address of the instruction
 
 Field 1: Instruction encoding
@@ -279,20 +281,21 @@ Field 1: Instruction encoding
 Field 2: Target address that caused the exception
 
 |Sync |Load address misaligned
-|STF_EVENT_LOAD_ACCESS_FAULT |Sync |Load access fault
-|STF_EVENT_STORE_ADDR_MISALIGN |Sync |Store address misaligned
-|STF_EVENT_STORE_ACCESS_FAULT |Sync |Store access fault
-|STF_EVENT_USER_ECALL .4+|Field 0: System call number |Sync |Environment call from User mode
-|STF_EVENT_SUPERVISOR_ECALL |Sync |Environment call from Supervisor mode
-|STF_EVENT_HYPERVISOR_ECALL |Sync |Environment call from Hypervisor mode
-|STF_EVENT_MACHINE_ECALL |Sync |Environment call from Machine mode
-|STF_EVENT_INST_PAGE_FAULT |
+|LOAD_ACCESS_FAULT |Sync |Load access fault
+|STORE_ADDR_MISALIGN |Sync |Store address misaligned
+|STORE_ACCESS_FAULT |Sync |Store access fault
+|USER_ECALL .4+|Field 0: System call number |Sync |Environment call from User mode
+|SUPERVISOR_ECALL |Sync |Environment call from Supervisor mode
+|HYPERVISOR_ECALL |Sync |Environment call from Hypervisor mode
+|MACHINE_ECALL |Sync |Environment call from Machine mode
+|INST_PAGE_FAULT .2+|
 Field 0: Virtual address of the instruction
 
 Field 1: Instruction encoding
 
 |Sync |Instruction page fault
-|STF_EVENT_LOAD_PAGE_FAULT .2+|
+|GUEST_INST_PAGE_FAULT|Sync |Guest instruction page fault
+|LOAD_PAGE_FAULT .4+|
 Field 0: Virtual address of the instruction
 
 Field 1: Instruction encoding
@@ -300,8 +303,10 @@ Field 1: Instruction encoding
 Field 2: Target address that caused the exception
 
 |Sync |Load page fault
-|STF_EVENT_STORE_PAGE_FAULT |Sync |Store page fault
-|STF_EVENT_MODE_CHANGE |
+|GUEST_LOAD_PAGE_FAULT|Sync |Guest load page fault
+|STORE_PAGE_FAULT |Sync |Store page fault
+|GUEST_STORE_PAGE_FAULT |Sync |Guest store page fault
+|MODE_CHANGE |
 Field 0: Mode in which subsequent instructions execute
 
 Field 0 Encoding:
@@ -316,6 +321,18 @@ Field 0 Encoding:
 
 |Sync/Async |Meta-event for capturing transition into a new execution mode
 |===
+
+<<<
+
+== STF Transaction Protocols
+
+The protocol data field in the <<TransactionRecord>> is generic, enabling STF to
+support multiple bus protocols without having to allocate a new record type
+every time a new protocol is added. The protocol type is specified by the
+<<ProtocolIdRecord>> in the header, and only one protocol type is allowed per
+trace.
+
+include::generated/stf-protocols.adoc[]
 
 <<<
 

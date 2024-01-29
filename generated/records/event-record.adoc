@@ -6,12 +6,12 @@ To make changes to this file, edit records/event-record.yml and then run make.
 :record-enum: STF_EVENT (100)
 :record-mandatory: Whenever COF condition exists due to an event external to the hart/core
 include::../../include/stf-record.adoc[tag=record-fields]
-* b[30:0] STF Exception Event ID number.
-* b[31] Type
+* b[62:0] STF Exception Event ID number.
+* b[63] Type
 ** 0 = Fault
 ** 1 = Interrupt
-* b[39:32] Number of metadata fields
-* b[103:40] Event metadata field 0 +
+* b[71:64] Number of metadata fields
+* b[135:72] Event metadata field 0 +
 ...
 * b[(64*n+103):(64*n+40)] Event metadata field n
 
@@ -28,4 +28,8 @@ If this event is a fault, thrown due to an invalid instruction encoding ( i.e. f
 Event metadata fields shail be 0-extended to 64-bit
 
 stf_dump prints this record prefixed by "EVT "
+
+*NOTE*: An earlier version of this specification used 32-bit values for the
+event ID. Traces using 32-bit events can still be read by invoking
+`reader.set32BitEvents(true)`.
 include::../../include/stf-record.adoc[tag=record-end]

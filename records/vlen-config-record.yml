@@ -1,0 +1,22 @@
+name: VLenConfigRecord
+enum:
+  name: STF_VLEN_CONFIG
+  val: 10
+mandatory: If a trace includes vector instructions
+fields:
+  - start: 0
+    end: 31
+    desc: VLEN of the vector instructions present in the trace
+desc: |-
+  Shall be present with a nonzero value in the header of a trace that contains
+  vector instructions.
+
+  While the STF spec attempts to be micro-architecture agnostic whenever
+  possible, traces containing RISC-V vector instructions are dependent on the
+  VLEN of the underlying architecture they were traced from.
+
+  Simulators that consume STF traces should ensure that the VLEN of a trace is
+  equal to the VLEN of the architecture being simulated.
+
+  A trace with no VLenConfigRecord is equivalent to one specifying VLEN == 0,
+  and implies that the trace cannot contain vector instructions.

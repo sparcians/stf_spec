@@ -6,9 +6,9 @@ To make changes to this file, edit records/process-id-ext-record.yml and then ru
 :record-enum: STF_PROCESS_ID_EXT (8)
 :record-mandatory: YES
 include::../../include/stf-record.adoc[tag=record-fields]
-* b[31:0] TGID/PID
-* b[63:32] TID
-* b[95:64] ASID
+* b[31:0] Hardware Thread ID (SMT hardware thread ID in an SMT context, otherwise core hardware ID)
+* b[63:32] PID
+* b[95:64] TID
 include::../../include/stf-record.adoc[tag=record-desc]
 Shall precede any instruction record that represents a change from prior
 instruction record in any of the listed ID’s
@@ -16,5 +16,5 @@ instruction record in any of the listed ID’s
 Every tool that creates/modifies stf file shall append/update the
 ProcessIDExtRecord
 
-Indicates any change in thread, process, or address space ID
+Indicates any change in thread, process, or hardware thread ID
 include::../../include/stf-record.adoc[tag=record-end]

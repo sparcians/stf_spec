@@ -1,0 +1,37 @@
+// tag::protocol-fields[]
+[%breakable]
+=== {protocol-name}
+[%unbreakable]
+[width="100%",cols="14%a,86%a",options="unbreakable"]
+|===
+|*Enum*
+|{protocol-enum}
+|*Fields*
+|[unstyled]
+// end::protocol-fields[]
+// tag::protocol-desc[]
+|*Description*
+|--
+// end::protocol-desc[]
+// tag::protocol-end[]
+--
+|===
+:!protocol-name:
+:!protocol-enum:
+// end::protocol-end[]
+// tag::channel-fields[]
+[%breakable]
+==== {channel-name}
+[%unbreakable]
+[width="100%",cols="14%a,86%a",options="unbreakable"]
+|===
+|*Enum*
+|{channel-enum}
+|*Fields*
+|[unstyled]
+// end::channel-fields[]
+// tag::channel-end[]
+|===
+:!channel-name:
+:!channel-enum:
+// end::channel-end[]

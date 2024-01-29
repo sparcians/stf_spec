@@ -1,0 +1,45 @@
+name: TransactionRecord
+enum:
+  name: STF_TRANSACTION
+  val: 250
+mandatory: Not allowed in instruction traces, required in transaction traces
+fields:
+  - start: 0
+    end: 63
+    desc: Transaction ID
+  - start: 64
+    end: 127
+    desc: Cycle delta
+  - start: 128
+    end: 135
+    desc: Clock ID
+  - start: 136
+    end: 151
+    desc: Number of metadata elements
+  - start: 152
+    end: variable
+    desc: Metadata
+  - start: variable
+    end: variable
+    desc: Protocol data
+desc: |-
+  Encapsulates a single transaction in a transaction trace.
+
+  The metadata field is a variable-sized array of metadata elements that each
+  have the following structure:
+
+  [unstyled]
+  * b[7:0] Element type
+  ** 0: uint8_t
+  ** 1: uint16_t
+  ** 2: uint32_t
+  ** 3: uint64_t
+  ** All other values are reserved
+  * b[8*sizeof(type)-1:8] Element value
+
+  The metadata is intended for attaching small amounts of additional
+  simulator-specific information (e.g. tag values, ID values, etc.) and should
+  not be used for large blocks of data.
+
+  The protocol data field is variable depending on the protocol ID of the trace.
+  See <<STF Transaction Protocols>> for details on how protocol data is encoded.
