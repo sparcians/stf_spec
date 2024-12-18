@@ -1,4 +1,4 @@
-= Simple Trace Format (STF) Specification: DRAFT Version 1.x
+= Simulation Trace Format (STF) Specification: DRAFT Version 1.x
 :toc: macro
 :toclevels: 3
 :imagesdir: images
@@ -100,7 +100,7 @@ first step in vector instructions support.
 
 == Introduction
 
-Simple Trace Format (STF) is a binary file format for storing instruction
+Simulation Trace Format (STF) is a binary file format for storing instruction
 traces, agnostic of instruction set architecture. The format defines a standard
 for capturing information related to instructions, associated register values,
 memory access addresses and data associated with them, as well as additional
@@ -347,9 +347,8 @@ include::generated/stf-protocols.adoc[]
 
 *Change of Flow (COF)* - Change of instruction execution flow for reasons that
 are deterministic as well as non-deterministic. COF is logged in the trace using
-the STF_INST_PC_TARGET record for deterministic and with STF_FORCE_PC,
-STF_INST_EXCEPTION_PC_TARGET and STF_EVENT_PC_TARGET for non-deterministic
-cases.
+the STF_INST_PC_TARGET record for deterministic and with STF_FORCE_PC or
+STF_EVENT_PC_TARGET for non-deterministic cases.
 
 STF_FORCE_PC applies COF to the current instruction, while all other cases apply
 it to the subsequent instruction.

@@ -1,7 +1,7 @@
 # stf_spec
-An open-source Simple Tracing Format specification
+An open-source Simulation Trace Format specification
 
-Simple Trace Format (STF) is a binary file format for storing instruction traces, agnostic of instruction
+Simulation Trace Format (STF) is a binary file format for storing instruction traces, agnostic of instruction
 set architecture. The format defines a standard for capturing information related to instructions,
 associated register values, memory access addresses and data associated with them, as well as
 additional context information such as page table walk, interrupts, bus/fabric transaction
