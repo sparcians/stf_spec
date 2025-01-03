@@ -4,7 +4,7 @@ GENERATED_ADOCS = generated/stf-records.adoc generated/stf-protocols.adoc
 
 INCLUDES = include/*.adoc
 
-DOC_DEPS = $(INCLUDES) $(GENERATED_ADOCS) LICENSE stf-spec.adoc
+DOC_DEPS = $(INCLUDES) $(GENERATED_ADOCS) LICENSE VERSION stf-spec.adoc
 
 SCRIPT_DEPS = scripts/lib/*.py
 

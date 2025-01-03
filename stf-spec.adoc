@@ -1,4 +1,5 @@
-= Simulation Trace Format (STF) Specification: DRAFT Version 1.x
+= Simulation Trace Format (STF) Specification
+:!version-label:
 :toc: macro
 :toclevels: 3
 :imagesdir: images

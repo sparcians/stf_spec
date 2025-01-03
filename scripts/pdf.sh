@@ -2,4 +2,4 @@
 
 ./scripts/bundle-setup.sh
 
-bundle exec asciidoctor-pdf -o generated/stf-spec.pdf stf-spec.adoc
+bundle exec asciidoctor-pdf -d book -a revnumber=$(git tag) -o generated/stf-spec.pdf stf-spec.adoc
