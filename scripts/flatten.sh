@@ -7,7 +7,7 @@ GENERATED_ADOC=generated/stf-spec-github.adoc
 bundle exec asciidoctor-reducer -o $GENERATED_ADOC.tmp stf-spec.adoc
 
 # Add revision info
-sed -i "/^= .* Specification$/ s/$/ $(git tag)/" $GENERATED_ADOC.tmp
+sed -i "/^= .* Specification$/ s/$/ $(git describe --abbrev=0)/" $GENERATED_ADOC.tmp
 
 # Fix the relative path for the images directory
 sed -i 's/:imagesdir: images/:imagesdir: ..\/images/g' $GENERATED_ADOC.tmp
