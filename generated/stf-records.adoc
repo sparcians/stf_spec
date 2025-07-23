@@ -27,6 +27,8 @@ include::records/protocol-id-record.adoc[]
 
 include::records/clock-id-record.adoc[]
 
+include::records/isa-extended-record.adoc[]
+
 include::records/end-header-record.adoc[]
 
 include::records/inst-pc-target-record.adoc[]

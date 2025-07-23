@@ -1,0 +1,23 @@
+name: ISAExtendedRecord
+enum:
+  name: STF_ISA_EXTENDED
+  val: 13
+mandatory: 'NO'
+fields:
+  - start: 0
+    end: 31
+    desc: Size of extended ISA string = n bytes
+  - start: 32
+    end: (8*n+31)
+    desc: ISA string data
+desc: |-
+  ISA string data is non-null terminated.
+  
+  May be included in the header to indicate ISA-specific flavors, extensions, etc.
+  
+  If this record is omitted, the STF reader will substitute a default value.
+  
+  Use-case:
+  
+  * Automatically configuring decoders, disassemblers, etc. that depend on detailed
+  ISA extension information.
