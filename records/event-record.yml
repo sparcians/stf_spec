@@ -35,7 +35,7 @@ desc: |-
   
   If this event is a fault, thrown due to an invalid instruction encoding ( i.e. fetch issue), generator tool shall report it as a no-op, while preserving and reporting the PC that triggered the fault.
   
-  Event metadata fields shail be 0-extended to 64-bit
+  Event metadata fields shall be 0-extended to 64-bit
   
   stf_dump prints this record prefixed by "EVT "
 
