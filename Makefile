@@ -1,6 +1,6 @@
 .PHONY: all git-hooks pdf
 
-GENERATED_ADOCS = generated/stf-records.adoc generated/stf-protocols.adoc
+GENERATED_ADOCS = generated/stf-records.adoc generated/stf-protocols.adoc generated/stf-record-order.adoc
 
 INCLUDES = include/*.adoc
 
@@ -24,6 +24,10 @@ generated/stf-records.adoc: records/*.yml scripts/gen-records.py .git/hooks/pre-
 
 generated/stf-protocols.adoc: protocols/*.yml scripts/gen-protocols.py .git/hooks/pre-commit .git/hooks/post-commit $(SCRIPT_DEPS)
 	./scripts/gen-protocols.py
+	touch .dirty
+
+generated/stf-record-order.adoc: records/*.yml scripts/gen-record-order.py .git/hooks/pre-commit .git/hooks/post-commit $(SCRIPT_DEPS)
+	./scripts/gen-record-order.py
 	touch .dirty
 
 scripts/flatten.sh: scripts/bundle-setup.sh

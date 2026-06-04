@@ -3,6 +3,7 @@ enum:
   name: STF_COMMENT
   val: 3
 mandatory: 'YES'
+order_requirement: false
 fields:
   - start: 0
     end: 31

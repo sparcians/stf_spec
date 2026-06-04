@@ -3,6 +3,8 @@ enum:
   name: STF_VLEN_CONFIG
   val: 10
 mandatory: If a trace includes vector instructions
+header_only: true
+instruction_record: true
 fields:
   - start: 0
     end: 31

@@ -3,6 +3,7 @@ enum:
   name: STF_BUS_MASTER_ACCESS
   val: 62
 mandatory: Whenever there are masters other than a single core in the traced environment.
+instruction_record: true
 fields:
   - start: 0
     end: 63

@@ -3,6 +3,7 @@ enum:
   name: STF_TRACE_INFO
   val: 6
 mandatory: 'YES'
+header_only: true
 fields:
   - start: 0
     end: 7

@@ -68,6 +68,32 @@ class AsciiDocGenerator:
         else:
             self.write_line('b[-1] Record has no data, just the descriptor.')
 
+    def write_header(self, string: str, level: int = 1):
+        self.write_line(f'{"=" * level} {string}')
+        self.write_line()
+
+    def write_page_break(self):
+        self.write_line()
+        self.write_line("<<<")
+        self.write_line()
+
+    def write_thematic_break(self):
+        self.write_line()
+        self.write_line("'''")
+        self.write_line()
+
+    def write_admonition_block(self, admonition: str, string: str):
+        self.write_line(f'[{admonition}]')
+        self.write_line('====')
+        self.write_line(string)
+        self.write_line('====')
+
+    def write_note_block(self, string: str):
+        self.write_admonition_block('NOTE', string)
+
+    def write_important_block(self, string: str):
+        self.write_admonition_block('IMPORTANT', string)
+
     def format_enum(self, enum_info: EnumDict) -> str:
         return f'{enum_info["name"]} ({enum_info["val"]})'
 

@@ -3,6 +3,7 @@ enum:
   name: STF_INST_32
   val: 240
 mandatory: Whenever instruction is a 32-bit instruction
+instruction_record: true
 fields:
   - start: 0
     end: 31

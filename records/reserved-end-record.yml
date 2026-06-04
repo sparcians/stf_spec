@@ -2,5 +2,6 @@ name: Reserved End
 enum:
   name: N/A
   val: 255
+allowed: false
 desc: |-
   Reserved for error detection.

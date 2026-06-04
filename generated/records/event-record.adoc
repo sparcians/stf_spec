@@ -29,7 +29,7 @@ Event metadata fields shall be 0-extended to 64-bit
 
 stf_dump prints this record prefixed by "EVT "
 
-*NOTE*: An earlier version of this specification used 32-bit values for the
+NOTE: An earlier version of this specification used 32-bit values for the
 event ID. Traces using 32-bit events can still be read by invoking
 `reader.set32BitEvents(true)`.
 include::../../include/stf-record.adoc[tag=record-end]

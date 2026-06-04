@@ -3,6 +3,8 @@ enum:
   name: STF_FORCE_PC
   val: 9
 mandatory: 'YES'
+order_requirement: false
+instruction_record: true
 fields:
   - start: 0
     end: 63
@@ -24,6 +26,6 @@ desc: |-
   non-zero - e.g. ARM). Some architectures may add behaviours based on the
   low/high bits.
   
-  Note this record is always 64 bit, even when running in 32bit IEM.
+  NOTE: This record is always 64 bit, even when running in 32bit IEM.
   
   stf_dump shows this record as a standalone line item prefix "FORCE_PC"

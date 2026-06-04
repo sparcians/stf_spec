@@ -3,6 +3,7 @@ enum:
   name: STF_INST_IEM
   val: 5
 mandatory: 'YES'
+instruction_record: true
 fields:
   - start: 0
     end: 15
@@ -16,8 +17,9 @@ desc: |-
   Every tool that creates/modifies stf file shall append/update the InstIEMRecord.
   
   Shall precede the very first instruction encoding record and every instruction
-  encoding change (STF_INST_16 or STF_INST_32) Note: other instruction encoding
-  lengths (e.g. 48-bit are not supported at this time)
+  encoding change (STF_INST_16 or STF_INST_32)
+  
+  NOTE: Other instruction encoding lengths (e.g. 48-bit) are not supported at this time
   
   Instruction encoding mode interpretation will depend on the ISA being traced, as
   captured in the ISARecord.

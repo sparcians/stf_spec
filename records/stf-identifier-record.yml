@@ -3,6 +3,7 @@ enum:
   name: STF_IDENTIFIER
   val: 1
 mandatory: 'YES'
+header_only: true
 fields:
   - start: 0
     end: 23

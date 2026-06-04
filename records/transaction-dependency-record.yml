@@ -3,6 +3,7 @@ enum:
   name: STF_TRANSACTION_DEPENDENCY
   val: 251
 mandatory: Not allowed in instruction traces, optional in transaction traces
+transaction_record: true
 fields:
   - start: 0
     end: 63

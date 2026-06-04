@@ -3,6 +3,8 @@ enum:
   name: STF_ISA
   val: 4
 mandatory: 'YES'
+header_only: true
+instruction_record: true
 fields:
   - start: 0
     end: 15

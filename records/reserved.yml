@@ -2,5 +2,6 @@ name: Reserved
 enum:
   name: STF_RESERVED
   val: 0
+allowed: false
 desc: |-
   Reserved for error detection

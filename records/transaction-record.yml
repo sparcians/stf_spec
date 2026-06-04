@@ -3,6 +3,7 @@ enum:
   name: STF_TRANSACTION
   val: 250
 mandatory: Not allowed in instruction traces, required in transaction traces
+transaction_record: true
 fields:
   - start: 0
     end: 63

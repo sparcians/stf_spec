@@ -3,6 +3,7 @@ enum:
   name: STF_END_HEADER
   val: 19
 mandatory: 'YES'
+header_only: true
 desc: |-
   Every tool that creates an stf file shall append the EndHeaderRecord
   

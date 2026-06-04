@@ -2,6 +2,7 @@ name: InstReadyRegRecord
 enum:
   name: STF_INST_READY_REG
   val: 41
+instruction_record: true
 fields:
   - start: 0
     end: 15

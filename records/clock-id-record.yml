@@ -3,6 +3,8 @@ enum:
   name: STF_CLOCK_ID
   val: 12
 mandatory: Optional in transaction traces, not allowed in instruction traces
+header_only: true
+transaction_record: true
 fields:
   - start: 0
     end: 7

@@ -4,7 +4,7 @@
 
 GENERATED_ADOC=generated/stf-spec-github.adoc
 
-bundle exec asciidoctor-reducer -o $GENERATED_ADOC.tmp stf-spec.adoc
+bundle exec asciidoctor-reducer -a env-github -o $GENERATED_ADOC.tmp stf-spec.adoc
 
 # Add revision info
 sed -i "/^= .* Specification$/ s/$/ $(git describe --abbrev=0)/" $GENERATED_ADOC.tmp

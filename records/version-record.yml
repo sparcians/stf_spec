@@ -3,6 +3,7 @@ enum:
   name: STF_VERSION
   val: 2
 mandatory: 'YES'
+header_only: true
 fields:
   - start: 0
     end: 31
